@@ -12,6 +12,7 @@ def favicon():
 
 def index():
     if request.method == "POST":
+        # username = request.form["username"]
         return render_template("hello.html")
     else:
         render_template("index.html")
