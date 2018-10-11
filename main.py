@@ -1,4 +1,5 @@
 from flask import Flask, send_from_directory, request, render_template
+import os
 
 app = Flask(__name__)
 
@@ -10,9 +11,12 @@ def favicon():
 
 @app.route('/', methods=["GET", "POST"])
 
-def index():
+def signup():
     if request.method == "POST":
-        # username = request.form["username"]
-        return render_template("hello.html")
+        username = request.form["username"]
+        return render_template("welcome.html", username=username)
     else:
-        render_template("index.html")
+        return render_template("signup.html")
+
+if __name__ == "__main__":
+    app.run(debug = True)
