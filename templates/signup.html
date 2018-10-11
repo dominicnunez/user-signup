@@ -6,7 +6,7 @@
 
 {% block body %}
 <main>
-        <form method="post">
+    <!-- <form method="post">
             <div class="container">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
@@ -33,6 +33,25 @@
                     <button type="submit" class="signupbtn">Sign Up</button>
                 </div>
             </div>
+        </form> -->
+    <div class="container">
+        <h4>Signup</h4>
+        <br>
+        {% from "_formhelpers.html" import render_field %}
+        <form method="post">
+            <dl>
+                {{render_field(form.username)}}
+                {{render_field(form.email)}}
+                {{render_field(form.password)}}
+                {{render_field(form.confirm)}}
+                {{render_field(form.accept_tos)}}
+            </dl>
+            <p><input type="submit" value="Register"></p>
         </form>
+
+        {% if error %}
+        <p class="error">Error:{{error}}</p>
+        {% endif %}
+    </div>
 </main>
 {% endblock %}
