@@ -75,3 +75,8 @@ button:hover {
 form.a {
     color: dodgerblue;
 }
+
+/* Custom */
+.welcome {
+    border: 2px solid black;
+}
